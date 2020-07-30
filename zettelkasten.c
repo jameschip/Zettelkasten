@@ -77,6 +77,8 @@ int zk_do_add_link() {
                 journal_update_entry( ent );
                 entry_free( ent );
                 entry_to_read = last_entry;
+                free(filter_tag);
+                filter_tag = NULL;
                 return SCREEN_DISPLAY;
                 break;
         }
