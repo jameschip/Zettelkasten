@@ -24,7 +24,7 @@ entry * entry_init( void )
 
 void entry_add_link( entry * e, uint64_t n, char * l ) {
     char * tmp = calloc(100,  sizeof( char ) );
-    sprintf( tmp, "{%i} : %s", n, l );
+    sprintf( tmp, "{%lu} : %s", n, l );
     e->links[e->link_count++] = strdup( tmp );
     free( tmp );
 }

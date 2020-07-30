@@ -28,7 +28,7 @@ int zk_screen_tag_list( uint64_t ent_num ) {
     move( 2, 0 );
     clrtoeol();
     char * message = calloc(50, sizeof( char ) );
-    sprintf( message, "Tags for {%i}.", e->entry_number );
+    sprintf( message, "Tags for {%lu}.", e->entry_number );
 
     // // Print the title
     attron( A_UNDERLINE );

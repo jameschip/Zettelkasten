@@ -1,10 +1,9 @@
 # By James Henderson, 2020
 
-CXX := gcc
-LXX = gcc
+CC := gcc
 
-CXXFLAGS := -Os 
-LXXFLAGS := -s -Os
+CFLAGS := -std=c99 -Os 
+LFLAGS := -s -Os
 
 
 BUILDDIR := build
@@ -14,10 +13,10 @@ SRCS := $(notdir $(shell find -name '*.c'))
 OBJS := $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRCS))
 
 zettelkasten: builddir $(OBJS) $(SRCS) 
-	$(LXX) $(LXXFLAGS) $(OBJS)  -o $(BUILDDIR)/zk -lmenu -lncurses
+	$(CC) $(LFLAGS) $(OBJS)  -o $(BUILDDIR)/zk -lmenu -lncurses
 
 $(OBJDIR)/%.o: %.cpp
-	$(CXX) $(CXXFLAGS) $^ -o $@ -lmenu -lncurses
+	$(CC) $(CFLAGS) $^ -o $@ -lmenu -lncurses
 
 .PHONY: builddir
 builddir:

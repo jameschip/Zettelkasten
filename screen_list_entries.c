@@ -9,6 +9,8 @@
 
 int zk_screen_list( const char * message ) {
 
+    
+
     int row, col;
     uint64_t  file_count = 0;
     WINDOW * _e_window;
@@ -21,7 +23,7 @@ int zk_screen_list( const char * message ) {
     curs_set(0);
 
     char ** entry_refs = get_all_entry_refs( filter_tag , &file_count );
-
+    
     _e_items = (ITEM **)calloc( file_count + 1, sizeof(ITEM *) );        
     
     getmaxyx( stdscr,row,col );
@@ -122,8 +124,7 @@ int zk_screen_list( const char * message ) {
     }
 
     filter_tag = NULL;
-    
-    free( entry_refs );
+
     delwin( _e_window );
  
     return action_value;

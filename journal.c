@@ -21,7 +21,7 @@
  */
 char * journal_file_path( uint64_t fn ) {
     char file_name[10];
-    sprintf(file_name, "%i", fn);
+    sprintf(file_name, "%lu", fn);
 
     char * home = getenv("HOME");
     char * temp = calloc( strlen( home ) + strlen( JOURNAL_DIR ) + strlen( file_name ) + 1, sizeof( char ) );
@@ -304,6 +304,7 @@ void journal_read_entry( entry * e, uint64_t n ) {
     
 }
 
+#include <ncurses.h>
 char ** get_all_entry_refs( const char * tag_filter, uint64_t * num ) {
 
     char ** entry_list = calloc( 1, sizeof(char *) );
@@ -328,11 +329,12 @@ char ** get_all_entry_refs( const char * tag_filter, uint64_t * num ) {
         entry_list = tmp;
         
         char * en = calloc(7, sizeof(char));
-        sprintf(en, "{%i}", e->entry_number );
+        sprintf(en, "{%lu}", e->entry_number );
         entry_list[*num] = malloc( sizeof(char) * (strlen( en ) + strlen( e->title )) + 2 );
         sprintf( entry_list[*num], "%s %s", en, e->title );
         *num += 1;
-    
+        
+     
         entry_free(e);
     }
     
@@ -340,3 +342,4 @@ char ** get_all_entry_refs( const char * tag_filter, uint64_t * num ) {
     return entry_list;
 
 }
+

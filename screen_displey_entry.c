@@ -28,8 +28,8 @@ int zk_screen_display( uint64_t e ) {
     // Print the title
     attron( A_UNDERLINE );
     char en[10];
-    sprintf( en, "%i", ent->entry_number );
-    mvwprintw( stdscr, 2, ( col - (strlen( ent->title ) + strlen( en ) + 3) ) / 2, "{%i} %s", ent->entry_number, ent->title );
+    sprintf( en, "%lu", ent->entry_number );
+    mvwprintw( stdscr, 2, ( col - (strlen( ent->title ) + strlen( en ) + 3) ) / 2, "{%lu} %s", ent->entry_number, ent->title );
     attroff( A_UNDERLINE );
     refresh();
 

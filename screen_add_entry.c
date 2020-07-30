@@ -190,7 +190,6 @@ int zk_screen_add_entry( void ) {
     delwin( _tags_win );
     delwin( _cancel_win );
     delwin( _create_win );
-
     return return_value;
 }
 
