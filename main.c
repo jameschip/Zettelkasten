@@ -9,7 +9,7 @@
 #include <menu.h>
 
 int main () {
-	    
+	init_journal();
 	initscr();
 	cbreak();
 	noecho();
