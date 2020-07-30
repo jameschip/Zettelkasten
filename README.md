@@ -37,7 +37,7 @@ An example file is:
 ```  
 ---
 > The title of the note
-# A_has_no_spaces
+# tag_has_no_spaces
 # another_tag
 ~ {10} : This links to entry 10 with this context text.
 ~ {13} : and this links to 13 with this context text.
