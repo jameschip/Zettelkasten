@@ -11,7 +11,7 @@ One of the most important parts here is the context given to the links between n
   
 Assume for instance we have 2 entries in our Zettlekasten with the titles "Ferns" and "Spores". If "Ferns" has a link to "Spores" and just the title of the entries is used then we have little idea of how spores are related to ferns. If however instead we have a link to the "Spores" note with the context "Ferns reproduce using spores" we now know why the notes are related.
 
-# Purposeful limits.
+## Purposeful limits.
 There are limits imposed by design.
 
 * A notes content may only be 500 characters. Notes should be short and punchy, you are not writing an essay per entry. Break longer things into multiple notes. 
@@ -21,10 +21,10 @@ There are limits imposed by design.
 ## How?
 Pull this repository and run the make file. The built binary will be ```/build/zk```. Move this to somewhere in your path and use from the command line. More complete instructions on how to use the software will be available somewhere.
 
-# Where?
+## Where?
 The entries in created by zk will be in a folder in ```~/Zettelkasten```. All of the entries will be in an extension less numbed text file counting from 0 upwards by one every time  you create a new entry. 
 
-# What format?
+## What format?
 It was important from the offset that the entries this Zettelkasten are in plain text and readable from outside the application itself. This also means that, providing it uses the same format, other software would be able to interact with your entries in a meaningful way.  
 Entries have a header section that is used to define things like tags, links to other entries and the title. Anything outside of this header material is considered the content of entry itself.  
 Header sections begin and end with the string ```---\n``` and each item is on its own line. The first character of the line indicates what data that line holds.
@@ -45,5 +45,5 @@ An example file is:
 This is the content of the entry!
 ```
  
-# Why?
+## Why?
 I built this for me. This is the note taking software I wanted. I share it here in case others may find it useful and so other may learn form (my mistakes in) the code.
