@@ -44,6 +44,10 @@ int main () {
 				state = zk_screen_tag_list( entry_to_read );
 				break;
 				
+			case SCREEN_ADD_TAG:
+				state = zk_screen_add_tag();
+                break;
+
 			default:
 				break;
 

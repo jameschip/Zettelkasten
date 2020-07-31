@@ -12,7 +12,8 @@ enum nav_states {
     SCREEN_FILTER_INPUT,
     SCREEN_CREATE_LINK,
     SCREEN_LINK_CONTEXT,
-    SCREEN_TAG_LIST
+    SCREEN_TAG_LIST,
+    SCREEN_ADD_TAG
 };
 
 extern char * filter_tag;
@@ -32,5 +33,6 @@ int zk_screen_add_entry( void );
 int zk_do_add_link( void );
 int zk_screen_link_context( void );
 int zk_screen_tag_list( uint64_t ent_num );
+int zk_screen_add_tag( void );
 
 #endif

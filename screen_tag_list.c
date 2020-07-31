@@ -72,7 +72,12 @@ int zk_screen_tag_list( uint64_t ent_num ) {
                 menu_driver( _e_menu, REQ_UP_ITEM );
                 wrefresh( _e_window );
                 break;
-                
+
+            case 'a':
+                action_value = SCREEN_ADD_TAG;
+                goto exit_loop;
+                break;
+
             case 10:   {    // Return Key.
                 if ( e->tag_count > 0 ) {
                     ITEM * cur; 
